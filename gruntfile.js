@@ -15,7 +15,7 @@ module.exports = function (grunt) {
      * @gconfig nodeunit
      */
     nodeunit: {
-      files: ['test/**/*_test.js']
+      main: ['test/**/*_test.js']
     }
   })
 
