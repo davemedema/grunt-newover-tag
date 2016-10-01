@@ -28,13 +28,13 @@ var repo = {
    */
   getHighestTag: function () {
     var highestTag = '0.0.0'
-    var tags = exec('git tag')
+    var tagsCmd = exec('git tag')
 
-    if (tags.code !== 0) {
+    if (tagsCmd.code !== 0) {
       return highestTag
     }
 
-    tags = tags.output.split('\n')
+    var tags = tagsCmd.stdout.split('\n')
 
     tags.forEach(function (tag) {
       tag = semver.valid(tag)
