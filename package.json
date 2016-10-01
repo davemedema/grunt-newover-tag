@@ -1,0 +1,46 @@
+{
+  "name": "grunt-newover-tag",
+  "version": "1.0.0",
+  "author": {
+    "name": "Dave Medema",
+    "email": "davemedema@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/davemedema/grunt-newover-tag/issues"
+  },
+  "description": "Commit and tag.",
+  "engines": {
+    "node": ">= 6.7.0"
+  },
+  "files": [
+    "tasks"
+  ],
+  "homepage": "https://github.com/davemedema/grunt-newover-tag",
+  "keywords": [
+    "git",
+    "git-commit",
+    "git-tag",
+    "grunt",
+    "gruntplugin",
+    "newover",
+    "tag"
+  ],
+  "license": "MIT",
+  "main": "gruntfile.js",
+  "repository": "davemedema/grunt-newover-tag",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "semver": "^5.3.0",
+    "shelljs": "^0.7.4"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "load-grunt-tasks": "^3.5.2"
+  },
+  "peerDependencies": {
+    "grunt": ">=0.4.5"
+  }
+}
