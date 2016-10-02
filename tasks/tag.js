@@ -49,7 +49,7 @@ var repo = {
   /**
    * Check if the repo is clean.
    *
-   * @return {Boolean}
+   * @return {bool}
    */
   isClean: function () {
     return (exec('git diff-index --quiet HEAD --').code === 0)
@@ -66,9 +66,9 @@ module.exports = function (grunt) {
     var pkg = grunt.config('pkg')
     var tag = pkg.version
 
-    // Make sure the current tag is valid...
+    // Make sure the tag is a valid semver...
     if (!semver.valid(tag)) {
-      grunt.warn('"' + tag + '" is not a valid semantic tag.')
+      grunt.warn('"' + tag + '" is not a valid semantic version.')
     }
 
     // Make sure a repository exists...
@@ -76,18 +76,18 @@ module.exports = function (grunt) {
       grunt.warn('Repository not found.')
     }
 
-    // Validate tag...
+    // Make sure the tag is greater than the current highest tag...
     var highestTag = repo.getHighestTag()
 
     if (highestTag && !semver.gt(tag, highestTag)) {
-      grunt.warn('"' + tag + '" is lower or equal than the current highest tag "' + highestTag + '".')
+      grunt.warn('"' + tag + '" is lower than or equal to the current highest tag "' + highestTag + '".')
     }
 
-    // Commit...
+    // Commit if need be...
     if (!repo.isClean()) {
       exec('git add .')
       if (exec('git commit -a -m " v' + tag + '"').code === 0) {
-        grunt.log.ok('Committed as: ' + tag)
+        grunt.log.ok('Committed as: v' + tag)
       }
     }
 
@@ -95,9 +95,9 @@ module.exports = function (grunt) {
     var tagCmd = exec('git tag v' + tag)
 
     if (tagCmd.code !== 0) {
-      grunt.warn('Couldn\'t tag the last commit.', tagCmd.output)
-    } else {
-      grunt.log.ok('Tagged as: ' + tag)
+      grunt.warn('Couldn\'t tag the last commit.', tagCmd.stdout)
     }
+
+    grunt.log.ok('Tagged as: ' + tag)
   })
 }
