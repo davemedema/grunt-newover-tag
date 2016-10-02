@@ -40,8 +40,9 @@ module.exports = function (grunt) {
   /**
    * @gtask release
    */
-  grunt.registerTask('release', function () {
+  grunt.registerTask('release', function (type) {
     grunt.task.run('test')
+    grunt.task.run('bump:' + (type || 'patch'))
     grunt.task.run('tag')
   })
 

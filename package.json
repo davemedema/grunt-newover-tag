@@ -38,6 +38,7 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-newover-bump": "^1.0.4",
     "load-grunt-tasks": "^3.5.2"
   },
   "peerDependencies": {
