@@ -95,9 +95,9 @@ module.exports = function (grunt) {
     var tagCmd = exec('git tag v' + tag)
 
     if (tagCmd.code !== 0) {
-      grunt.warn('Couldn\'t tag the last commit.', tagCmd.stdout)
+      grunt.warn('Couldn\'t tag: ', tagCmd.stdout)
     }
 
-    grunt.log.ok('Tagged as: ' + tag)
+    grunt.log.ok('Tagged as: v' + tag)
   })
 }
