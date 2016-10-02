@@ -1,6 +1,6 @@
 {
   "name": "grunt-newover-tag",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "Dave Medema",
     "email": "davemedema@gmail.com"
@@ -8,7 +8,7 @@
   "bugs": {
     "url": "https://github.com/davemedema/grunt-newover-tag/issues"
   },
-  "description": "Commit and tag.",
+  "description": "Tag.",
   "engines": {
     "node": ">= 6.7.0"
   },

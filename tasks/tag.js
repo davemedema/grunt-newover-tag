@@ -62,7 +62,7 @@ var repo = {
  * @param {object} grunt
  */
 module.exports = function (grunt) {
-  grunt.registerTask('tag', 'Commit and tag.', function () {
+  grunt.registerTask('tag', 'Tag.', function () {
     var pkg = grunt.config('pkg')
     var tag = pkg.version
 
